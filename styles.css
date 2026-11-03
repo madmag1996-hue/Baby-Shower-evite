@@ -1,0 +1,72 @@
+:root{color-scheme:light;--paper:#f8f2e7;--ink:#51402d;--blue:#b0d2e8;--line:#cdbb9f;--cream:#f5dbb7}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:Georgia,'Times New Roman',serif;background-image:radial-gradient(ellipse at 50% 45%,#fffaf1 0%,transparent 70%);min-height:100svh}
+button,a{-webkit-tap-highlight-color:transparent}
+button{font:inherit;color:inherit}
+button:focus-visible,a:focus-visible{outline:3px solid #426985;outline-offset:8px}
+.invite{min-height:100svh;display:grid;place-items:center;padding:48px 24px 30px;max-width:1180px;margin:auto;gap:48px}
+.jar-stage{width:min(330px,72vw);text-align:center;position:relative}
+.jar-button{display:block;width:100%;padding:0;border:0;background:none;cursor:pointer;position:relative}
+.jar-art{position:relative;display:block;width:100%;filter:drop-shadow(0 18px 12px #70533116);transition:transform .35s ease}
+.jar-body{display:block;width:100%;height:auto}
+.jar-lid{position:absolute;width:104%;left:-2%;top:-1%;overflow:visible;transform-origin:50% 80%;z-index:2}
+.lid-side{fill:#a7cbe3;stroke:var(--ink);stroke-width:3;stroke-linejoin:round}
+.lid-top{fill:#c1def0;stroke:var(--ink);stroke-width:3}
+.lid-line{fill:none;stroke:var(--ink);stroke-width:2;stroke-linecap:round;opacity:.85}
+.jar-button:hover .jar-art{transform:translateY(-4px) rotate(-1deg)}
+.open-hint{display:block;margin:24px -20px 0;font-size:15px;font-style:italic;letter-spacing:.02em;color:#7a674e}
+.open-hint>span{display:block;margin-top:10px;text-transform:uppercase;font-family:Arial,sans-serif;font-size:10px;font-weight:600;letter-spacing:.2em;font-style:normal}
+.hint-arrow{display:inline-block;font-size:17px;margin-left:5px}
+.is-opening .jar-lid,.is-open .jar-lid{animation:unscrew 1s cubic-bezier(.4,0,.2,1) both}
+.is-opening .jar-button{pointer-events:none}
+@keyframes unscrew{0%{transform:translate(0,0) rotate(0);opacity:1}20%{transform:translate(0,-6%) rotate(-9deg)}40%{transform:translate(0,-15%) rotate(8deg)}65%{transform:translate(12%,-100%) rotate(-22deg);opacity:1}100%{transform:translate(40%,-185%) rotate(28deg);opacity:0}}
+.is-open{grid-template-columns:.8fr 1.2fr;align-items:center;padding-top:65px;padding-bottom:65px}
+.is-open .jar-stage{width:min(100%,330px);justify-self:center;animation:settle .7s ease both}
+.is-open .jar-button{cursor:default}
+.is-open .jar-button:hover .jar-art{transform:none}
+.jar-caption{font-size:14px;font-style:italic;line-height:1.7;margin:24px 0 0;color:#806f59}
+.jar-caption span{display:block;color:#6995b1;font-size:28px}
+.invitation{min-width:0;width:100%;max-width:620px;background:#fffaf0;border:1px solid var(--line);padding:9px;box-shadow:0 16px 50px #7053310c;animation:unfold .7s ease both;outline:none}
+.card-inner{border:1px solid #ddcfb9;text-align:center;padding:33px 31px 22px;position:relative}
+.eyebrow{font-family:Arial,sans-serif;text-transform:uppercase;font-size:9px;font-weight:600;letter-spacing:.22em;line-height:1.7;margin:0}
+.little-heart{display:block;font-size:31px;color:#6e9bb7;margin:14px 0 4px}
+h1{font-weight:400;font-size:clamp(36px,4vw,51px);line-height:1.04;letter-spacing:-.045em;margin:0 0 20px}
+.intro{font-size:16px;line-height:1.6;max-width:340px;margin:0 auto}
+.divider{display:flex;align-items:center;justify-content:center;gap:15px;margin:22px 0;color:#739ab2;font-size:17px}
+.divider span{height:1px;width:65px;background:var(--line)}
+.event-details p{margin:0}
+.event-date{font-size:24px;letter-spacing:-.03em}
+.event-time{font-size:16px;margin-top:6px!important}
+.address{font-size:15px;line-height:1.6;margin-top:15px!important}
+.rsvp{display:inline-block;border-bottom:1px solid #799aaf;color:var(--ink);text-decoration:none;margin-top:17px;padding-bottom:5px;font-size:14px}
+.rsvp span{color:#6087a0;margin-left:8px}
+.refreshments{font-style:italic;font-size:14px;line-height:1.6;max-width:300px;margin:20px auto 23px}
+.registry{display:flex;align-items:center;justify-content:space-between;gap:20px;background:#e8eff0;padding:20px;text-align:left;border-radius:2px}
+.registry .eyebrow{font-size:8px;letter-spacing:.13em}
+.registry h2{font-weight:400;font-size:27px;line-height:1.05;letter-spacing:-.035em;margin:8px 0}
+.registry-copy>p:not(.eyebrow){font-size:12px;line-height:1.5;margin:0 0 10px}
+.registry a{color:var(--ink);font-size:11px;text-underline-offset:3px}
+.registry img{width:180px;max-width:51%;height:auto;display:block;background:white;flex-shrink:0}
+.allergy{font-size:11px;font-style:italic;margin:20px 0 15px}
+.close-button{border:0;background:none;padding:6px;cursor:pointer;font-size:10px;font-family:Arial,sans-serif;text-transform:uppercase;letter-spacing:.12em;color:#7d6c57;text-decoration:underline;text-underline-offset:4px}
+@keyframes unfold{from{opacity:0;transform:translateY(25px) scale(.98)}to{opacity:1;transform:translateY(0) scale(1)}}
+@keyframes settle{from{opacity:.7;transform:translateY(15px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:700px){.invite{padding:48px 20px 30px;gap:30px}.jar-stage{width:min(300px,70vw)}.is-open{grid-template-columns:minmax(0,1fr);padding-top:45px}.is-open .jar-stage{width:170px}.jar-caption{font-size:12px;margin-top:15px}.jar-caption span{display:none}.invitation{justify-self:center;max-width:500px}.card-inner{padding:28px 19px 20px}h1{font-size:42px}.intro{font-size:15px}.registry{padding:16px;gap:12px}.registry img{width:180px;max-width:53%}.registry h2{font-size:25px}.registry-copy>p:not(.eyebrow){font-size:11px}.registry .eyebrow{font-size:7px;letter-spacing:.08em}}
+@media(max-width:360px){.invite{padding-left:12px;padding-right:12px}.card-inner{padding-left:13px;padding-right:13px}.registry{flex-direction:column;text-align:center}.registry img{max-width:100%;width:200px}.registry h2 br{display:none}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+/* Keep the original QR quiet zone intact and comfortably scannable. */
+@media(max-width:700px){.registry{flex-direction:column;text-align:center;padding:23px 16px;gap:17px}.registry h2 br{display:none}.registry h2{margin-top:9px}.registry-copy>p:not(.eyebrow) br{display:none}.registry img{width:220px;max-width:100%}}
+.is-open .jar-lid{animation:none;opacity:0;visibility:hidden}
+
+.peanut-confetti{position:fixed;inset:0;overflow:hidden;pointer-events:none;z-index:10;contain:strict}
+.confetti-peanut{position:absolute;height:auto;aspect-ratio:24/42;overflow:visible;will-change:transform,opacity}
+@media(prefers-reduced-motion:reduce){.peanut-confetti{display:none}}
+
+/* A gathered gingham cover extends past the illustrated screw threads. */
+.jar-lid{width:108%;left:-4%;top:-2%}
+.card-inner{isolation:isolate;overflow:hidden}
+.invitation-art{position:absolute;inset:0;width:100%;height:100%;opacity:.105;pointer-events:none;z-index:-1}
+.baby-peanut{display:block;width:190px;max-width:65%;height:auto;margin:19px auto 17px;filter:drop-shadow(0 5px 5px #80624014)}
+.registry{background:#e8eff0f5}
+@media(max-width:700px){.baby-peanut{width:170px;margin-top:18px}}
